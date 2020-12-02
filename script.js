@@ -21,7 +21,9 @@ $(function() {
     $('.number-hours', obj).html(hours);
     $('.number-minutes', obj).html(minutes);
     $('.number-seconds', obj).html(seconds); 
-   
+    localStorage.setItem("number-hours", hours); 
+    localStorage.setItem("number-minutes", minutes);
+    localStorage.setItem("number-seconds",  seconds);
   }
 
   /** eigentlicher Countdown */
@@ -34,11 +36,11 @@ $(function() {
   var timer = setInterval(function() {
     console.log(count);
     localStorage.setItem("counter",  count);
+    count--;
     if (count == 0) {
       $('.countdown-container').hide();
       return;
     }
-    count--;    
     setCounterData(count, $(".countdown-container"));
   }, 1000);
 });
