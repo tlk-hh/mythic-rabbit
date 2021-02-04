@@ -34,7 +34,7 @@ $(function() {
   var timer = setInterval(function() {
     console.log(count);
     localStorage.setItem("counter",  count);
-    if (count =< 0) {
+    if (count < 1) {
       $('.countdown-container').hide();
       return;
     }
